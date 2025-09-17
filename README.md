@@ -1,212 +1,160 @@
-# Extension Boilerplate
+# Vakitler Extension
 
-![Extension Boilerplate Logo](public/banner.png)
+![Vakitler Extension Logo](public/banner.png)
 
-A minimalist, type-safe browser extension boilerplate built with cutting-edge technologies for maximum productivity and simplicity.
+Namaz vakitlerini gösteren pratik ve modern tarayıcı uzantısı. Güncel namaz vakitlerini, kalan süreyi ve şehir seçimi özelliklerini içerir.
 
-## 🚀 Features
+## 🚀 Özellikler
 
-- ⚡️ **Vite 7** - Lightning fast build tool with advanced HMR
-- 🔒 **TypeScript 5** - Full type safety with latest features
-- ⚛️ **React 19** - Latest React with modern hooks and concurrent features
-- 🎨 **TailwindCSS 3.4** - Utility-first CSS framework with custom design system
-- 🔄 **Advanced HMR** - Hot Module Replacement for all extension contexts
-- 📦 **Manifest V3** - Modern Chrome extension standard
-- 🦊 **Firefox Support** - Cross-browser compatibility with dedicated builds
-- 🎯 **Dynamic SCSS Generation** - Automated Tailwind classes with dark mode support
-- 🎭 **Framer Motion** - Smooth animations and transitions
-- 🎨 **Iconsax React** - Beautiful icon library
-- 🔧 **WebExtension Polyfill** - Cross-browser API compatibility
-- 📜 **Sass Support** - Advanced CSS preprocessing
-- 🛠️ **Custom Build Scripts** - Automated zipping and deployment
+- 🕌 **Namaz Vakitleri** - Güncel 5 vakit namaz saatleri
+- ⏰ **Kalan Süre Göstergesi** - Sonraki vakte kalan zaman
+- 📍 **Şehir Seçimi** - Ülke, şehir ve ilçe bazlı konum seçimi
+- 🌓 **Karanlık Mod** - Sistem temasına göre otomatik tema desteği
+- ⚡ **Hızlı Erişim** - Tarayıcı araç çubuğundan anında erişim
+- 🔄 **Otomatik Güncelleme** - Vakit verilerinin otomatik yenilenmesi
+- 📱 **Responsive Tasarım** - Tüm ekran boyutlarında mükemmel görünüm
+- 🌙 **Hicri Tarih** - İsteğe bağlı hicri tarih gösterimi
+- ⚙️ **Vakit Ayarları** - Kişisel vakit ayarları (+/- dakika)
+- ✨ **İftar Vakitleri** - Sahur ve iftar vakitleri gösterimi
+- 🌍 **Çok Dilli Destek** - Türkçe ve İngilizce dil desteği
+- 🎨 **Modern UI** - Smooth animasyonlar ve motion efektleri
 
-## 🎨 Dynamic SCSS Class Generation
+## 📦 Kurulum
 
-One of the standout features of this boilerplate is its intelligent SCSS system that dynamically generates TailwindCSS utility classes:
+1. Repository'yi klonlayın
 
-### Key Features:
-
-- **Automatic Dark Mode Support** - Every color class automatically generates its dark mode counterpart
-- **Custom Color Palette** - Extension-specific color scheme with prefix system
-- **Smart Class Generation** - Background, text, border, outline, ring, and shadow utilities
-- **SCSS Variables** - Configurable extension ID and color schemes
-- **Performance Optimized** - Only generates used classes at build time
-
-### Example Usage:
-
-```scss
-// Automatically generates:
-// .bg-w-50, .bg-w-100, .bg-w-200, ... .dark:bg-neutral-950, .dark:bg-neutral-900, etc.
-// .text-w-50, .text-w-100, ... with dark mode variants
-// .border-w-50, .ring-w-50, .shadow-w-50, etc.
-```
-
-This system eliminates the need for manual dark mode classes and ensures consistent theming across your extension.
-
-## 📦 Installation
-
-1. Clone the repository
-
-2. Install dependencies
+2. Bağımlılıkları yükleyin
 
 ```bash
-# Using Bun (recommended)
+# Bun kullanarak (önerilen)
 bun i
 
-# Or using npm
+# Veya npm kullanarak
 npm install
 ```
 
-3. Start development server
+3. Geliştirme sunucusunu başlatın
 
 ```bash
 bun dev
 ```
 
-## 🛠️ Development
+## 🛠️ Geliştirme
 
-### Available Scripts
+### Kullanılabilir Komutlar
 
-- `bun dev` - Start development server with HMR
-- `bun build` - Build for production
-- `bun build:watch` - Build and watch for changes
-- `bun build:firefox` - Build for Firefox
-- `bun dev:firefox` - Start Firefox development server
-- `bun lint` - Run ESLint
-- `bun lint:fix` - Fix ESLint issues
-- `bun prettier` - Format code
+- `bun dev` - HMR ile geliştirme sunucusunu başlat
+- `bun build` - Üretim için derle
+- `bun build:watch` - Değişiklikleri izleyerek derle
+- `bun build:firefox` - Firefox için derle
+- `bun dev:firefox` - Firefox geliştirme sunucusunu başlat
+- `bun lint` - ESLint çalıştır
+- `bun lint:fix` - ESLint sorunlarını düzelt
+- `bun prettier` - Kodu formatla
 
-### Project Structure
+## 🏗️ Üretim için Derleme
 
-```
-├── src/
-│   ├── components/        # Reusable React components
-│   │   ├── layout/        # Layout components
-│   │   └── views/         # Main view components
-│   ├── context/           # React contexts
-│   ├── hooks/             # Custom React hooks
-│   ├── lib/               # Core libraries and utilities
-│   ├── pages/             # Extension entry points
-│   │   ├── background/    # Background script
-│   │   ├── content/       # Content scripts and styles
-│   │   └── popup/         # Popup page
-│   ├── shared/            # Shared components and utilities
-│   ├── styles/            # Global styles and SCSS
-│   └── types/             # TypeScript type definitions
-├── public/                # Static assets and icons
-├── utils/                 # Build tools and utilities
-└── build/                 # Build output directory
-```
-
-## 🛠️ Build & Zip Script
-
-This boilerplate includes a powerful `build.sh` script that automatically builds your extension and creates a versioned zip file:
-
-### Features
-
-- **Automatic Package Manager Detection** - Uses Bun if available, falls back to npm
-- **Version Extraction** - Pulls version from package.json automatically
-- **One-Command Build & Zip** - Build and package in a single step
-- **Timestamped Archives** - Creates uniquely named zip files
-- **Clean Build Process** - Removes old build artifacts
-
-### Usage
-
-```bash
-# Build and create versioned zip file automatically
-bash build.sh
-```
-
-This single command will:
-
-1. Detect and use the appropriate package manager (Bun or npm)
-2. Install dependencies if node_modules is missing
-3. Extract version from package.json
-4. Build the extension for production
-5. Create a timestamped zip file: `build-[version]-[date].zip`
-6. Clean up the build directory
-
-### Example Output
-
-```
-build-0.0.1-2025-01-16_143052.zip
-```
-
-### Requirements
-
-- `jq` for JSON parsing (`brew install jq`)
-- Zip utility (built-in on macOS/Linux)
-- Bun or npm
-
-### What Makes This Special
-
-Unlike other boilerplates, our build script:
-
-- ✅ **One-command deployment** - No manual zipping required
-- ✅ **Smart dependency management** - Auto-installs if needed
-- ✅ **Cross-platform compatibility** - Works on macOS, Linux, and Windows (WSL)
-- ✅ **Version-aware** - Uses your package.json version in filenames
-- ✅ **Clean output** - No leftover files after zipping
-
-## 🏗️ Building for Production
-
-1. Build the extension:
+1. Uzantıyı derleyin:
 
 ```bash
 bun build
 ```
 
-2. Load the extension:
-   - Open Chrome/Firefox
-   - Navigate to extensions page (`chrome://extensions` or `about:debugging`)
-   - Enable "Developer mode"
-   - Click "Load unpacked" and select the `build` directory
+2. Uzantıyı yükleyin:
+   - Chrome/Firefox'u açın
+   - Uzantılar sayfasına gidin (`chrome://extensions` veya `about:debugging`)
+   - "Developer mode"u etkinleştirin
+   - "Load unpacked" butonuna tıklayın ve `build` klasörünü seçin
 
-## 🔧 Configuration
+## 📱 Kullanım
 
-### Manifest Configuration
+1. **İlk Kurulum**: Uzantıyı yükledikten sonra ikonuna tıklayın
+2. **Şehir Seçimi**: Ülke, şehir ve ilçe seçin
+3. **Vakit Takibi**: Otomatik olarak güncel vakitler gösterilir
+4. **Kalan Süre**: Sonraki vakte kalan zaman badge'de görünür
+5. **İftar/Sahur**: Ramadan ayında özel iftar ve sahur vakitleri gösterilir
 
-Modify `manifest.js` to customize extension settings:
+## 🔧 Yapılandırma
 
-- Permissions
-- Icons
-- Content Scripts
-- Background Scripts
+### Manifest Yapılandırması
 
-## 🤝 Contributing
+`manifest.js` dosyasını düzenleyerek uzantı ayarlarını özelleştirin:
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit changes (`git commit -m 'Add amazing feature'`)
-4. Push to branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+- İzinler (permissions)
+- İkonlar (icons)
+- İçerik scriptleri (content scripts)
+- Arka plan scriptleri (background scripts)
 
-## ⚠️ Disclaimer
+## 📂 Proje Yapısı
 
-This boilerplate is inspired by and references code from [Jonghakseo/chrome-extension-boilerplate-react-vite](https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite). While we've adapted and simplified the original template for our specific needs, we acknowledge that some concepts, configurations, and code structures are derived from this excellent open-source project.
+```
+├── src/
+│   ├── components/        # Yeniden kullanılabilir React bileşenleri
+│   │   ├── vakitler/      # Vakitler uygulaması bileşenleri
+│   │   └── ui/            # UI bileşenleri
+│   ├── context/           # React context'ler
+│   ├── hooks/             # Özel React hook'ları
+│   ├── lib/               # Temel kütüphaneler ve yardımcılar
+│   ├── models/            # Veri modelleri (Time, Times)
+│   ├── pages/             # Uzantı giriş noktaları
+│   │   ├── background/    # Arka plan scripti
+│   │   └── popup/         # Popup sayfası
+│   ├── shared/            # Paylaşılan bileşenler ve yardımcılar
+│   │   └── storages/      # Depolama katmanı
+│   ├── styles/            # Global stiller ve SCSS
+│   └── types/             # TypeScript tip tanımları
+├── public/                # Statik varlıklar ve ikonlar
+├── utils/                 # Derleme araçları ve yardımcılar
+└── build/                 # Derleme çıktı klasörü
+```
 
-**Important**: This is not an official fork or derivative work. We've created our own implementation while learning from the original repository's architecture and best practices. All credit for the original innovative concepts goes to the original authors.
+## 🌟 Temel Bileşenler
 
-## 📝 License
+### VakitlerStoreContext
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Uygulamanın ana state yönetimini sağlar:
 
-## 🙏 Acknowledgments
+- Vakit verilerinin yönetimi
+- Şehir seçimi ve ayarlar
+- API entegrasyonu
 
-### Core Technologies
+### Time & Times Modelleri
 
-- [Vite](https://vitejs.dev/) - Next generation frontend tooling
-- [React](https://reactjs.org/) - A JavaScript library for building user interfaces
-- [TypeScript](https://www.typescriptlang.org/) - JavaScript with syntax for types
-- [TailwindCSS](https://tailwindcss.com/) - A utility-first CSS framework
+Namaz vakitlerinin hesaplanması ve yönetimi:
+
+- Güncel vakit hesaplama
+- Kalan süre hesaplaması
+- Vakit ayarları (+/- dakika)
+
+### UI Bileşenleri
+
+- **Layout**: Ana sayfa düzeni ve tema yönetimi
+- **Location**: Şehir seçimi popover'ı
+- **Summary**: Güncel vakit ve kalan süre gösterimi
+- **TimeList**: Tüm vakitlerin listesi
+- **CitySelection**: Ülke/şehir/ilçe seçimi
+
+
+
+## 📝 Lisans
+
+Bu proje MIT Lisansı altında lisanslanmıştır - detaylar için [LICENSE](LICENSE) dosyasına bakın.
+
+## 🙏 Teşekkürler
+
+### Ana Teknolojiler
+
+- [Vite](https://vitejs.dev/) - Yeni nesil frontend araçları
+- [React](https://reactjs.org/) - Kullanıcı arayüzleri için JavaScript kütüphanesi
+- [TypeScript](https://www.typescriptlang.org/) - Tip güvenliği sağlayan JavaScript
+- [TailwindCSS](https://tailwindcss.com/) - Utility-first CSS framework
 - [Chrome Extensions Documentation](https://developer.chrome.com/docs/extensions/)
 
-### Inspiration & Learning Resources
+### İlham Kaynakları
 
-- [Jonghakseo/chrome-extension-boilerplate-react-vite](https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite) - Original boilerplate that inspired this project
-- [Framer Motion](https://www.framer.com/motion/) - Production-ready motion library
-- [Iconsax](https://iconsax.io/) - Beautiful icon library
+- Vakitler web uygulaması - Orijinal namaz vakitleri uygulaması
+- Modern tarayıcı uzantısı geliştirme pratikleri
 
-### Special Thanks
+---
 
-Special thanks to the original chrome-extension-boilerplate-react-vite project for pioneering modern extension development practices and providing excellent architectural patterns that we've adapted and simplified for this minimalist template.
+**Not**: Bu uzantı, vakitler.app web uygulamasının bir tarayıcı uzantısı versiyonudur. Web uygulamasındaki tüm özellikler ve API entegrasyonları korunmuştur.

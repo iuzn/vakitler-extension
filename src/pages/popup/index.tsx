@@ -1,5 +1,5 @@
 import './index.css';
-import App from '@/pages/content/ui/app';
+import Popup from './Popup';
 import { createRoot } from 'react-dom/client';
 
 const init = () => {
@@ -9,7 +9,7 @@ const init = () => {
   }
   const root = createRoot(appContainer);
 
-  root.render(<App />);
+  root.render(<Popup />);
 };
 
 init();

@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import { TimeNames } from './src/types/common';
 
 const APP_NAME = 'eb';
 
@@ -29,9 +30,6 @@ const config: Config = {
   darkMode: 'media',
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    fontFamily: {
-      sans: ['Inter', 'sans-serif'],
-    },
     //We use declerative spacing because when injected into the page, it will be overridden by the page's styles. We directly use pixels.
     spacing: {
       '0': '0px',
@@ -108,6 +106,31 @@ const config: Config = {
     extend: {
       colors: {
         [APP_NAME]: colors,
+        // Vakit renkleri - WEB TARAFI İLE BİREBİR AYNI
+        [TimeNames.Imsak]: {
+          light: '#daf2fe',
+          dark: '#192b3b',
+        },
+        [TimeNames.Gunes]: {
+          light: '#feead6',
+          dark: '#40221a',
+        },
+        [TimeNames.Ogle]: {
+          light: '#fef6cc',
+          dark: '#3a281a',
+        },
+        [TimeNames.Ikindi]: {
+          light: '#ffedd5',
+          dark: '#421a25',
+        },
+        [TimeNames.Aksam]: {
+          light: '#e0edff',
+          dark: '#1b2448',
+        },
+        [TimeNames.Yatsi]: {
+          light: '#e4e8fe',
+          dark: '#212044',
+        },
       },
       screens: {
         'xs-h': { raw: '(min-height: 400px)' },
@@ -139,6 +162,29 @@ const config: Config = {
       },
     },
   },
+  safelist: [
+    // Extension'da kullanılan gerçek class'lar
+    {
+      pattern:
+        /bg-(sky|orange|yellow|blue|indigo)-(50|100|200|300|400|500|600|700|800|900)/,
+      variants: ['dark'],
+    },
+    {
+      pattern:
+        /text-(sky|orange|yellow|blue|indigo)-(50|100|200|300|400|500|600|700|800|900)/,
+      variants: ['dark'],
+    },
+    {
+      pattern:
+        /bg-opacity-(0|5|10|15|20|25|30|35|40|45|50|55|60|65|70|75|80|85|90|95|100)/,
+      variants: ['dark'],
+    },
+    {
+      pattern:
+        /opacity-(0|5|10|15|20|25|30|35|40|45|50|55|60|65|70|75|80|85|90|95|100)/,
+      variants: ['dark'],
+    },
+  ],
   plugins: [],
 };
 export default config;

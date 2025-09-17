@@ -1,8 +1,337 @@
 {
-  "extensionDescription": {
-    "message": "Extension Boilerplate"
-  },
   "extensionName": {
-    "message": "Extension Boilerplate"
+    "message": "Vakitler Extension",
+    "description": "Extension name"
+  },
+  "extensionDescription": {
+    "message": "Practical browser extension showing prayer times",
+    "description": "Extension description"
+  },
+
+  "settings": {
+    "message": "Settings",
+    "description": "Settings menu"
+  },
+  "back": {
+    "message": "Back",
+    "description": "Back button"
+  },
+  "save": {
+    "message": "Save",
+    "description": "Save button"
+  },
+  "cancel": {
+    "message": "Cancel",
+    "description": "Cancel button"
+  },
+  "close": {
+    "message": "Close",
+    "description": "Close button"
+  },
+
+  "location": {
+    "message": "Location",
+    "description": "Location selection"
+  },
+  "country": {
+    "message": "Country",
+    "description": "Country selection"
+  },
+  "region": {
+    "message": "Region",
+    "description": "Region selection"
+  },
+  "district": {
+    "message": "District",
+    "description": "District selection"
+  },
+
+  "language": {
+    "message": "Language",
+    "description": "Language selection"
+  },
+  "themeTitle": {
+    "message": "Appearance",
+    "description": "Appearance selection title"
+  },
+  "timeFormatTitle": {
+    "message": "Time format",
+    "description": "Time format selection title"
+  },
+  "timeFormatOption12": {
+    "message": "12 hour format",
+    "description": "12 hour time format"
+  },
+  "timeFormatOption24": {
+    "message": "24 hour format",
+    "description": "24 hour time format"
+  },
+  "themeOptionSystem": {
+    "message": "Device responsive theme",
+    "description": "System theme"
+  },
+  "themeOptionLight": {
+    "message": "Always light theme",
+    "description": "Light theme"
+  },
+  "themeOptionDark": {
+    "message": "Always dark theme",
+    "description": "Dark theme"
+  },
+  "langOptionTr": {
+    "message": "Türkçe",
+    "description": "Turkish language"
+  },
+  "langOptionEn": {
+    "message": "English",
+    "description": "English language"
+  },
+
+  "prayerTimes": {
+    "message": "Prayer Times",
+    "description": "Prayer times title"
+  },
+  "fajr": {
+    "message": "Fajr",
+    "description": "Fajr prayer time"
+  },
+  "sunrise": {
+    "message": "Sunrise",
+    "description": "Sunrise time"
+  },
+  "dhuhr": {
+    "message": "Dhuhr",
+    "description": "Dhuhr prayer time"
+  },
+  "asr": {
+    "message": "Asr",
+    "description": "Asr prayer time"
+  },
+  "maghrib": {
+    "message": "Maghrib",
+    "description": "Maghrib prayer time"
+  },
+  "isha": {
+    "message": "Isha",
+    "description": "Isha prayer time"
+  },
+
+  "nextPrayer": {
+    "message": "Next Prayer",
+    "description": "Next prayer time"
+  },
+  "remainingTime": {
+    "message": "Time to",
+    "description": "Time remaining to prayer"
+  },
+  "timerTitle": {
+    "message": "Time to $1",
+    "description": "Timer title showing next prayer time",
+    "placeholders": {
+      "prayer": {
+        "content": "$1",
+        "example": "Fajr"
+      }
+    }
+  },
+
+  "selectCity": {
+    "message": "Select City",
+    "description": "Select city prompt"
+  },
+  "selectCountry": {
+    "message": "Select Country",
+    "description": "Select country title"
+  },
+  "selectRegion": {
+    "message": "Select Region",
+    "description": "Select region title"
+  },
+  "selectDistrict": {
+    "message": "Select District",
+    "description": "Select district title"
+  },
+
+  "loading": {
+    "message": "Loading...",
+    "description": "Loading message"
+  },
+  "prayerTimesLoading": {
+    "message": "Loading prayer times...",
+    "description": "Prayer times loading message"
+  },
+  "error": {
+    "message": "Error",
+    "description": "Error message"
+  },
+  "retry": {
+    "message": "Retry",
+    "description": "Retry button"
+  },
+
+  "search": {
+    "message": "Search...",
+    "description": "Search placeholder text"
+  },
+  "searchCountry": {
+    "message": "Search country...",
+    "description": "Search country placeholder"
+  },
+  "searchRegion": {
+    "message": "Search region...",
+    "description": "Search region placeholder"
+  },
+  "searchDistrict": {
+    "message": "Search district...",
+    "description": "Search district placeholder"
+  },
+
+  "hour": {
+    "message": "h",
+    "description": "Hour abbreviation"
+  },
+  "minute": {
+    "message": "m",
+    "description": "Minute abbreviation"
+  },
+  "second": {
+    "message": "s",
+    "description": "Second abbreviation"
+  },
+  "timerHour": {
+    "message": "$1 h",
+    "description": "Timer hour format",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "timerMinute": {
+    "message": "$1 m",
+    "description": "Timer minute format",
+    "placeholders": {
+      "minutes": {
+        "content": "$1",
+        "example": "30"
+      }
+    }
+  },
+  "hourShort": {
+    "message": "h",
+    "description": "Hour abbreviation"
+  },
+  "minuteShort": {
+    "message": "m",
+    "description": "Minute abbreviation"
+  },
+  "iftarTime": {
+    "message": "Iftar Time",
+    "description": "Iftar time display"
+  },
+  "timerSecond": {
+    "message": "$1 s",
+    "description": "Timer second format",
+    "placeholders": {
+      "seconds": {
+        "content": "$1",
+        "example": "45"
+      }
+    }
+  },
+
+  "islamicDate": {
+    "message": "Islamic Date",
+    "description": "Islamic date display"
+  },
+  "ramadanTimer": {
+    "message": "Iftar Timer",
+    "description": "Iftar timer display"
+  },
+  "customAdjustments": {
+    "message": "Minute Adjustments",
+    "description": "Custom prayer time adjustments"
+  },
+  "customAdjustmentsTitle": {
+    "message": "Minute Adjustments",
+    "description": "Minute adjustments title"
+  },
+  "customAdjustmentsEmpty": {
+    "message": "No adjustments",
+    "description": "No adjustments message"
+  },
+  "adjustmentsDescription": {
+    "message": "You can adjust each prayer time by +/-60 minutes",
+    "description": "Adjustments description"
+  },
+  "resetAdjustments": {
+    "message": "Reset All",
+    "description": "Reset all adjustments button"
+  },
+
+  "about": {
+    "message": "About",
+    "description": "About section"
+  },
+  "aboutOpenSource": {
+    "message": "This project is free and open source",
+    "description": "Open source link"
+  },
+  "aboutSourceCode": {
+    "message": "Source Code",
+    "description": "Source code link"
+  },
+  "aboutAPI": {
+    "message": "This application uses data provided by $1.",
+    "description": "API information message",
+    "placeholders": {
+      "source": {
+        "content": "$1",
+        "example": "diyanet.gov.tr"
+      }
+    }
+  },
+  "support": {
+    "message": "Thanks for your support",
+    "description": "Support section"
+  },
+
+  "selectLocation": {
+    "message": "Select Location",
+    "description": "Select location prompt"
+  },
+  "viewTimes": {
+    "message": "View Times",
+    "description": "View prayer times button"
+  },
+  "timesNotFound": {
+    "message": "Prayer times not found",
+    "description": "No prayer times found message"
+  },
+  "todayTimesNotFound": {
+    "message": "Today's prayer times not found",
+    "description": "Today's prayer times not found message"
+  },
+  "settingsAdjusted": {
+    "message": "Settings adjusted",
+    "description": "Settings adjusted message"
+  },
+  "ramadanTime": {
+    "message": "Ramadan Timer",
+    "description": "Ramadan timer title"
+  },
+  "jumuah": {
+    "message": "Jumu'ah",
+    "description": "Friday prayer"
+  },
+  "friday": {
+    "message": "Friday",
+    "description": "Friday"
+  },
+
+  "backButton": {
+    "message": "Back",
+    "description": "Back button"
   }
 }

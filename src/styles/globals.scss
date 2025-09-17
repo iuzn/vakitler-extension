@@ -1,236 +1,197 @@
-@use 'sass:list';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-//Important Note: If you change this, you need to change the extensionId in the config.ts file
-$extensionId: 'eb';
-
+/* Vakitler Extension Styles */
 @layer base {
-  ##{$extensionId}-app {
-    --tw-color-#{$extensionId}-50: 247 254 231;
-    --tw-color-#{$extensionId}-100: 237 253 202;
-    --tw-color-#{$extensionId}-200: 220 251 155;
-    --tw-color-#{$extensionId}-300: 187 244 81;
-    --tw-color-#{$extensionId}-400: 167 234 49;
-    --tw-color-#{$extensionId}-500: 136 208 18;
-    --tw-color-#{$extensionId}-600: 105 166 10;
-    --tw-color-#{$extensionId}-700: 79 126 13;
-    --tw-color-#{$extensionId}-800: 64 100 16;
-    --tw-color-#{$extensionId}-900: 55 84 19;
-    --tw-color-#{$extensionId}-950: 27 47 4;
-
-    --color-#{$extensionId}-50: rgb(var(--tw-color-#{$extensionId}-50));
-    --color-#{$extensionId}-100: rgb(var(--tw-color-#{$extensionId}-100));
-    --color-#{$extensionId}-200: rgb(var(--tw-color-#{$extensionId}-200));
-    --color-#{$extensionId}-300: rgb(var(--tw-color-#{$extensionId}-300));
-    --color-#{$extensionId}-400: rgb(var(--tw-color-#{$extensionId}-400));
-    --color-#{$extensionId}-500: rgb(var(--tw-color-#{$extensionId}-500));
-    --color-#{$extensionId}-600: rgb(var(--tw-color-#{$extensionId}-600));
-    --color-#{$extensionId}-700: rgb(var(--tw-color-#{$extensionId}-700));
-    --color-#{$extensionId}-800: rgb(var(--tw-color-#{$extensionId}-800));
-    --color-#{$extensionId}-900: rgb(var(--tw-color-#{$extensionId}-900));
-    --color-#{$extensionId}-950: rgb(var(--tw-color-#{$extensionId}-950));
-  }
-  @font-face {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 100 900;
-    font-display: swap;
-    src: url('InterVariable.woff2') format('woff2');
-  }
   html {
-    font-family: 'Inter', sans-serif !important;
-  }
-  ##{$extensionId}-app {
-    @apply text-700 scroll-smooth font-sans antialiased !important;
+    color-scheme: light;
   }
 
-  ##{$extensionId}-app * {
-    font-family: 'Inter', sans-serif !important;
-  }
-  :root {
-    // z-index: 2147483647 !important;
-    font-size: 16px !important;
-  }
-  ##{$extensionId}-app {
-    // z-index: 2147483647 !important;
-    font-size: 16px !important;
+  /* Dark mode için color scheme */
+  @media (prefers-color-scheme: dark) {
+    html {
+      color-scheme: dark;
+    }
   }
 
-  ##{$extensionId}-content-view-root,
-  ##{$extensionId}-content-view-root-dev {
-    all: initial;
+  body {
+    margin: 0;
+    padding: 0;
   }
 
-  a,
   button {
-    @apply focus-visible:ring-w-200 ring-offset-50 focus-visible:shadow-none focus-visible:outline-none focus-visible:ring focus-visible:ring-offset-2 focus-visible:drop-shadow-none;
+    @apply text-left;
   }
-  ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    @apply font-normal;
   }
-  ::-webkit-scrollbar-thumb {
-    border-radius: 4px;
+
+  /* Custom color schemes for prayer times - BİREBİR WEB TARAFI İLE AYNI */
+  :root {
+    --color-Imsak-light: #daf2fe;
+    --color-Imsak-dark: #192b3b;
+    --color-Gunes-light: #feead6;
+    --color-Gunes-dark: #40221a;
+    --color-Ogle-light: #fef6cc;
+    --color-Ogle-dark: #3a281a;
+    --color-Ikindi-light: #ffedd5;
+    --color-Ikindi-dark: #421a25;
+    --color-Aksam-light: #e0edff;
+    --color-Aksam-dark: #1b2448;
+    --color-Yatsi-light: #e4e8fe;
+    --color-Yatsi-dark: #212044;
+  }
+
+  .bg-Imsak-light {
+    background-color: var(--color-Imsak-light);
+  }
+  .bg-Imsak-dark {
+    background-color: var(--color-Imsak-dark);
+  }
+  .text-Imsak-light {
+    color: var(--color-Imsak-light);
+  }
+  .text-Imsak-dark {
+    color: var(--color-Imsak-dark);
+  }
+
+  .bg-Gunes-light {
+    background-color: var(--color-Gunes-light);
+  }
+  .bg-Gunes-dark {
+    background-color: var(--color-Gunes-dark);
+  }
+  .text-Gunes-light {
+    color: var(--color-Gunes-light);
+  }
+  .text-Gunes-dark {
+    color: var(--color-Gunes-dark);
+  }
+
+  .bg-Ogle-light {
+    background-color: var(--color-Ogle-light);
+  }
+  .bg-Ogle-dark {
+    background-color: var(--color-Ogle-dark);
+  }
+  .text-Ogle-light {
+    color: var(--color-Ogle-light);
+  }
+  .text-Ogle-dark {
+    color: var(--color-Ogle-dark);
+  }
+
+  .bg-Ikindi-light {
+    background-color: var(--color-Ikindi-light);
+  }
+  .bg-Ikindi-dark {
+    background-color: var(--color-Ikindi-dark);
+  }
+  .text-Ikindi-light {
+    color: var(--color-Ikindi-light);
+  }
+  .text-Ikindi-dark {
+    color: var(--color-Ikindi-dark);
+  }
+
+  .bg-Aksam-light {
+    background-color: var(--color-Aksam-light);
+  }
+  .bg-Aksam-dark {
+    background-color: var(--color-Aksam-dark);
+  }
+  .text-Aksam-light {
+    color: var(--color-Aksam-light);
+  }
+  .text-Aksam-dark {
+    color: var(--color-Aksam-dark);
+  }
+
+  .bg-Yatsi-light {
+    background-color: var(--color-Yatsi-light);
+  }
+  .bg-Yatsi-dark {
+    background-color: var(--color-Yatsi-dark);
+  }
+  .text-Yatsi-light {
+    color: var(--color-Yatsi-light);
+  }
+  .text-Yatsi-dark {
+    color: var(--color-Yatsi-dark);
   }
 }
 
 @layer components {
-  $color-steps: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950;
-  $color-steps-reversed: 950, 900, 800, 700, 600, 500, 400, 300, 200, 100, 50;
-  $prefixes:
-    'bg', 'text', 'fill', 'stroke', 'divide', 'ring-offset', 'decoration';
-  $colors: (
-    'neutral': '',
-    '#{$extensionId}': 'w-',
-    'rose': 'rd-',
-    'emerald': 'gn-',
-  );
-  $border-sizes: '0', '2', '4', '8';
-  $sizes: '0', '1', '2', '4', '8';
-  $shadow-sizes: 'sm', 'md', 'lg', 'xl', '2xl', 'inner';
-  $directions: 't', 'r', 'b', 'l', 'x', 'y', 's', 'e';
-
-  @each $color-name, $color-prefix in $colors {
-    @each $prefix in $prefixes {
-      @each $step in $color-steps {
-        $index: list.index($color-steps, $step);
-        $reversed-step: list.nth($color-steps-reversed, $index);
-        .#{$prefix}-#{$color-prefix}#{$step} {
-          @apply #{$prefix}-#{$color-name}-#{$step} dark:#{$prefix}-#{$color-name}-#{$reversed-step};
-        }
-      }
-    }
-
-    @each $step in $color-steps {
-      $index: list.index($color-steps, $step);
-      $reversed-step: list.nth($color-steps-reversed, $index);
-
-      .border-#{$color-prefix}#{$step} {
-        @apply border-#{$color-name}-#{$step} dark:border-#{$color-name}-#{$reversed-step} border;
-      }
-      .outline-#{$color-prefix}#{$step} {
-        @apply outline-#{$color-name}-#{$step} dark:outline-#{$color-name}-#{$reversed-step} outline;
-      }
-      .ring-#{$color-prefix}#{$step} {
-        @apply ring-#{$color-name}-#{$step} dark:ring-#{$color-name}-#{$reversed-step} ring;
-      }
-      .shadow-#{$color-prefix}#{$step} {
-        @apply shadow-#{$color-name}-#{$step} dark:shadow-#{$color-name}-#{$reversed-step} shadow;
-      }
-
-      @each $size in $border-sizes {
-        @each $direction in $directions {
-          .border-#{$direction}-#{$size}-#{$color-prefix}#{$step} {
-            @apply border-#{$direction}-#{$size} border-#{$color-name}-#{$step} dark:border-#{$color-name}-#{$reversed-step};
-          }
-          .border-#{$direction}-#{$color-prefix}#{$step} {
-            @apply border-#{$direction} border-#{$color-name}-#{$step} dark:border-#{$color-name}-#{$reversed-step};
-          }
-        }
-        .border-#{$size}-#{$color-prefix}#{$step} {
-          @apply border-#{$size} border-#{$color-name}-#{$step} dark:border-#{$color-name}-#{$reversed-step};
-        }
-      }
-
-      @each $size in $sizes {
-        .outline-#{$size}-#{$color-prefix}#{$step} {
-          @apply outline-#{$size} outline-#{$color-name}-#{$step} dark:outline-#{$color-name}-#{$reversed-step} outline;
-        }
-        .ring-#{$size}-#{$color-prefix}#{$step} {
-          @apply ring-#{$size} ring-#{$color-name}-#{$step} dark:ring-#{$color-name}-#{$reversed-step};
-        }
-      }
-
-      @each $size in $shadow-sizes {
-        .shadow-#{$size}-#{$color-prefix}#{$step} {
-          @apply shadow-#{$size} shadow-#{$color-name}-#{$step} dark:shadow-#{$color-name}-#{$reversed-step};
-        }
-      }
-    }
-  }
-
-  .bg-default {
-    @apply bg-white dark:bg-black;
-  }
-  .bg-reversed {
-    @apply bg-black dark:bg-white;
-  }
-  .text-default {
-    @apply text-black dark:text-white;
-  }
-  .text-reversed {
-    @apply text-white dark:text-black;
-  }
-  .border-default {
-    @apply border-black dark:border-white;
-  }
-  .border-reversed {
-    @apply border-white dark:border-black;
-  }
-  .ring-default {
-    @apply ring-black dark:ring-white;
-  }
-  .ring-reversed {
-    @apply ring-white dark:ring-black;
-  }
-  .shadow-default {
-    @apply shadow-black dark:shadow-white;
-  }
-  .shadow-reversed {
-    @apply shadow-white dark:shadow-black;
-  }
-  .outline-default {
-    @apply outline-black dark:outline-white;
-  }
-  .outline-reversed {
-    @apply outline-white dark:outline-black;
-  }
-  .fill-default {
-    @apply fill-black dark:fill-white;
-  }
-  .fill-reversed {
-    @apply fill-white dark:fill-black;
-  }
-
   .flex-center {
     @apply flex items-center justify-center;
+  }
+
+  /* Vakitler specific utilities */
+  .prayer-time-card {
+    @apply rounded-lg p-3 transition-all duration-200;
+  }
+
+  .prayer-time-current {
+    @apply border-l-4 border-white bg-white/20;
+  }
+
+  .prayer-time-next {
+    @apply border-l-4 border-blue-400 bg-white/10;
   }
 }
 
 @layer utilities {
-  @keyframes slideIn {
-    from {
-      transform: translateY(100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 
-  @keyframes slideOut {
-    from {
-      transform: translateY(0);
-      opacity: 1;
-    }
-    to {
-      transform: translateY(100%);
-      opacity: 0;
-    }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 
-  .animate-slideIn {
-    animation: slideIn 0.3s ease-out;
+  /* Dark mode compatible thin scrollbar */
+  .thin-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(75 85 99) transparent;
   }
 
-  .animate-slideOut {
-    animation: slideOut 0.3s ease-in;
+  .thin-scrollbar.dark {
+    scrollbar-color: rgb(107 114 128) transparent;
   }
 
-  .animate-out {
-    animation: slideOut 0.3s ease-in forwards;
+  .thin-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .thin-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .thin-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgb(75 85 99);
+    border-radius: 2px;
+  }
+
+  .thin-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(55 65 81);
+  }
+
+  /* Dark mode scrollbar */
+  .dark .thin-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgb(107 114 128);
+  }
+
+  .dark .thin-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(156 163 175);
   }
 }

@@ -2,6 +2,11 @@
  * Storage area type for persisting and exchanging data.
  * @see https://developer.chrome.com/docs/extensions/reference/storage/#overview
  */
+export enum TimeFormat {
+  Twelve = '12',
+  TwentyFour = '24',
+}
+
 export enum StorageType {
   /**
    * Persist data locally against browser restarts. Will be deleted by uninstalling the extension.
@@ -13,7 +18,7 @@ export enum StorageType {
    */
   Sync = 'sync',
   /**
-   * Requires an [enterprise policy](https://www.chromium.org/administrators/configuring-policy-for-extensions) with a
+   * Requires an [enterprise policy](https://www.chromium.org/administrators/configuring/policy-for-extensions) with a
    * json schema for company wide config.
    */
   Managed = 'managed',
@@ -50,6 +55,53 @@ export type BaseStorage<D> = {
   subscribe: (listener: () => void) => () => void;
 };
 
+// Vakitler extension storage types
+export interface PrayerTimeData {
+  Imsak: string;
+  Gunes: string;
+  Ogle: string;
+  Ikindi: string;
+  Aksam: string;
+  Yatsi: string;
+  KibleSaati: string;
+  HicriTarihUzun: string;
+  MiladiTarihKisa: string;
+  AyinSekliURL: string;
+  [key: string]: string;
+}
+
+export interface CitySettings {
+  IlceAdi: string;
+  IlceAdiEn: string;
+  IlceID: string;
+}
+
+export interface ICountry {
+  UlkeAdi: string;
+  UlkeAdiEn: string;
+  UlkeID: string;
+}
+
+export interface IRegion {
+  SehirAdi: string;
+  SehirAdiEn: string;
+  SehirID: string;
+}
+
+export interface VakitlerSettings {
+  country?: ICountry;
+  _country?: ICountry;
+  region?: IRegion;
+  _region?: IRegion;
+  city?: CitySettings;
+  _city?: CitySettings;
+  timeFormat: TimeFormat;
+  adjustments: number[];
+  islamicDate: boolean;
+  ramadanTimer: boolean;
+  language?: 'tr' | 'en'; // Optional language preference
+}
+
 type StorageConfig = {
   /**
    * Assign the {@link StorageType} to use.
@@ -74,9 +126,14 @@ type StorageConfig = {
 /**
  * Sets or updates an arbitrary cache with a new value or the result of an update function.
  */
-async function updateCache<D>(valueOrUpdate: ValueOrUpdate<D>, cache: D | null): Promise<D> {
+async function updateCache<D>(
+  valueOrUpdate: ValueOrUpdate<D>,
+  cache: D | null,
+): Promise<D> {
   // Type guard to check if our value or update is a function
-  function isFunction<D>(value: ValueOrUpdate<D>): value is (prev: D) => D | Promise<D> {
+  function isFunction<D>(
+    value: ValueOrUpdate<D>,
+  ): value is (prev: D) => D | Promise<D> {
     return typeof value === 'function';
   }
 
@@ -109,14 +166,20 @@ let globalSessionAccessLevelFlag: StorageConfig['sessionAccessForContentScripts'
  */
 function checkStoragePermission(storageType: StorageType): void {
   if (chrome.storage[storageType] === undefined) {
-    throw new Error(`Check your storage permission in manifest.json: ${storageType} is not defined`);
+    throw new Error(
+      `Check your storage permission in manifest.json: ${storageType} is not defined`,
+    );
   }
 }
 
 /**
  * Creates a storage area for persisting and exchanging data.
  */
-export function createStorage<D>(key: string, fallback: D, config?: StorageConfig): BaseStorage<D> {
+export function createStorage<D>(
+  key: string,
+  fallback: D,
+  config?: StorageConfig,
+): BaseStorage<D> {
   let cache: D | null = null;
   let listeners: Array<() => void> = [];
   const storageType = config?.storageType ?? StorageType.Local;
@@ -143,7 +206,7 @@ export function createStorage<D>(key: string, fallback: D, config?: StorageConfi
   };
 
   const _emitChange = () => {
-    listeners.forEach(listener => listener());
+    listeners.forEach((listener) => listener());
   };
 
   const set = async (valueOrUpdate: ValueOrUpdate<D>) => {
@@ -156,7 +219,7 @@ export function createStorage<D>(key: string, fallback: D, config?: StorageConfi
   const subscribe = (listener: () => void) => {
     listeners = [...listeners, listener];
     return () => {
-      listeners = listeners.filter(l => l !== listener);
+      listeners = listeners.filter((l) => l !== listener);
     };
   };
 
@@ -164,13 +227,15 @@ export function createStorage<D>(key: string, fallback: D, config?: StorageConfi
     return cache;
   };
 
-  _getDataFromStorage().then(data => {
+  _getDataFromStorage().then((data) => {
     cache = data;
     _emitChange();
   });
 
   // Listener for live updates from the browser
-  async function _updateFromStorageOnChanged(changes: { [key: string]: chrome.storage.StorageChange }) {
+  async function _updateFromStorageOnChanged(changes: {
+    [key: string]: chrome.storage.StorageChange;
+  }) {
     // Check if the key we are listening for is in the changes object
     if (changes[key] === undefined) return;
 
@@ -185,7 +250,9 @@ export function createStorage<D>(key: string, fallback: D, config?: StorageConfi
 
   // Register listener for live updates for our storage area
   if (liveUpdate) {
-    chrome.storage[storageType].onChanged.addListener(_updateFromStorageOnChanged);
+    chrome.storage[storageType].onChanged.addListener(
+      _updateFromStorageOnChanged,
+    );
   }
 
   return {

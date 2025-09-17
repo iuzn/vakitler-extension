@@ -6,7 +6,7 @@ import customDynamicImport from './utils/plugins/custom-dynamic-import';
 import addHmr from './utils/plugins/add-hmr';
 import watchRebuild from './utils/plugins/watch-rebuild';
 import inlineVitePreloadScript from './utils/plugins/inline-vite-preload-script';
- 
+
 const rootDir = resolve(__dirname);
 const srcDir = resolve(rootDir, 'src');
 const pagesDir = resolve(srcDir, 'pages');
@@ -70,7 +70,7 @@ export default defineConfig({
 
       external: [],
     },
-  }, 
+  },
 });
 
 function getCacheInvalidationKey() {

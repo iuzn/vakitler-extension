@@ -4,4 +4,6 @@ body {
   width: 420px;
   height: 600px;
   overflow: hidden;
+  margin: 0;
+  padding: 0;
 }

@@ -1,7 +1,7 @@
 {
-  "name": "extension-boilerplate",
-  "version": "0.0.1",
-  "description": "This is a boilerplate for building a browser extension with Vite, React, and TypeScript.",
+  "name": "vakitler-extension",
+  "version": "1.0.0",
+  "description": "Namaz vakitlerini gösteren pratik tarayıcı uzantısı - Vakitler.app extension versiyonu",
   "scripts": {
     "build": "tsc --noEmit && vite build",
     "build:dev": "vite build",
@@ -18,14 +18,21 @@
   },
   "type": "module",
   "dependencies": {
+    "@radix-ui/react-select": "^2.2.6",
+    "@radix-ui/react-switch": "^1.2.6",
+    "@tabler/icons-react": "^3.35.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "framer-motion": "^12.23.12",
+    "fuse.js": "^7.1.0",
     "iconsax-react": "^0.0.8",
+    "lucide-react": "^0.544.0",
+    "luxon": "^3.7.2",
+    "motion": "^12.23.13",
     "react": "19.1.1",
     "react-dom": "19.1.1",
     "tailwind-merge": "^2.5.5",
-    "webextension-polyfill": "^0.12.0"
+    "webextension-polyfill": "^0.12.0",
+    "zustand": "^5.0.8"
   },
   "devDependencies": {
     "@rollup/plugin-sucrase": "^5.0.2",

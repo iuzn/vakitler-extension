@@ -1,0 +1,319 @@
+{
+  "extensionName": {
+    "message": "Vakitler Extension",
+    "description": "Uzantının adı"
+  },
+  "extensionDescription": {
+    "message": "Namaz vakitlerini gösteren pratik tarayıcı uzantısı",
+    "description": "Uzantının açıklaması"
+  },
+
+  "settings": {
+    "message": "Ayarlar",
+    "description": "Ayarlar menüsü"
+  },
+  "back": {
+    "message": "Geri",
+    "description": "Geri butonu"
+  },
+  "save": {
+    "message": "Kaydet",
+    "description": "Kaydet butonu"
+  },
+  "cancel": {
+    "message": "İptal",
+    "description": "İptal butonu"
+  },
+  "close": {
+    "message": "Kapat",
+    "description": "Kapat butonu"
+  },
+
+  "location": {
+    "message": "Konum",
+    "description": "Konum seçimi"
+  },
+  "country": {
+    "message": "Ülke",
+    "description": "Ülke seçimi"
+  },
+  "region": {
+    "message": "İl",
+    "description": "İl seçimi"
+  },
+  "district": {
+    "message": "İlçe",
+    "description": "İlçe seçimi"
+  },
+
+  "language": {
+    "message": "Dil",
+    "description": "Dil seçimi"
+  },
+  "themeTitle": {
+    "message": "Görünüş",
+    "description": "Görünüş seçimi başlığı"
+  },
+  "timeFormatTitle": {
+    "message": "Saat formatı",
+    "description": "Saat formatı seçimi başlığı"
+  },
+  "timeFormatOption12": {
+    "message": "12 saat biçimi",
+    "description": "12 saat formatı"
+  },
+  "timeFormatOption24": {
+    "message": "24 saat biçimi",
+    "description": "24 saat formatı"
+  },
+  "themeOptionSystem": {
+    "message": "Cihaz duyarlı tema",
+    "description": "Sistem teması"
+  },
+  "themeOptionLight": {
+    "message": "Her zaman açık tema",
+    "description": "Açık tema"
+  },
+  "themeOptionDark": {
+    "message": "Her zaman koyu tema",
+    "description": "Koyu tema"
+  },
+  "langOptionTr": {
+    "message": "Türkçe",
+    "description": "Türkçe dil"
+  },
+  "langOptionEn": {
+    "message": "English",
+    "description": "İngilizce dil"
+  },
+
+  "prayerTimes": {
+    "message": "Namaz Vakitleri",
+    "description": "Namaz vakitleri başlığı"
+  },
+  "fajr": {
+    "message": "İmsak",
+    "description": "İmsak vakti"
+  },
+  "sunrise": {
+    "message": "Güneş",
+    "description": "Güneş vakti"
+  },
+  "dhuhr": {
+    "message": "Öğle",
+    "description": "Öğle vakti"
+  },
+  "asr": {
+    "message": "İkindi",
+    "description": "İkindi vakti"
+  },
+  "maghrib": {
+    "message": "Akşam",
+    "description": "Akşam vakti"
+  },
+  "isha": {
+    "message": "Yatsı",
+    "description": "Yatsı vakti"
+  },
+
+  "nextPrayer": {
+    "message": "Sonraki Vakit",
+    "description": "Sonraki namaz vakti"
+  },
+  "remainingTime": {
+    "message": "vaktine",
+    "description": "Vakte kalan süre"
+  },
+  "timerTitle": {
+    "message": "$1 vaktine",
+    "description": "Timer başlığı",
+    "placeholders": {
+      "prayer": {
+        "content": "$1",
+        "example": "İmsak"
+      }
+    }
+  },
+
+  "selectCity": {
+    "message": "Şehir Seçin",
+    "description": "Şehir seçimi"
+  },
+  "selectCountry": {
+    "message": "Ülke Seçin",
+    "description": "Ülke seçimi başlığı"
+  },
+  "selectRegion": {
+    "message": "İl Seçin",
+    "description": "İl seçimi başlığı"
+  },
+  "selectDistrict": {
+    "message": "İlçe Seçin",
+    "description": "İlçe seçimi başlığı"
+  },
+
+  "loading": {
+    "message": "Yükleniyor...",
+    "description": "Yükleme mesajı"
+  },
+  "prayerTimesLoading": {
+    "message": "Namaz vakitleri yükleniyor...",
+    "description": "Namaz vakitleri yükleme mesajı"
+  },
+  "error": {
+    "message": "Hata",
+    "description": "Hata mesajı"
+  },
+  "retry": {
+    "message": "Tekrar Dene",
+    "description": "Tekrar dene butonu"
+  },
+
+  "search": {
+    "message": "Ara...",
+    "description": "Arama placeholder metni"
+  },
+  "searchCountry": {
+    "message": "Ülke ara...",
+    "description": "Ülke arama placeholder'ı"
+  },
+  "searchRegion": {
+    "message": "İl ara...",
+    "description": "İl arama placeholder'ı"
+  },
+  "searchDistrict": {
+    "message": "İlçe ara...",
+    "description": "İlçe arama placeholder'ı"
+  },
+
+  "hour": {
+    "message": "sa",
+    "description": "Saat kısaltması"
+  },
+  "minute": {
+    "message": "dk",
+    "description": "Dakika kısaltması"
+  },
+  "second": {
+    "message": "sn",
+    "description": "Saniye kısaltması"
+  },
+  "timerHour": {
+    "message": "$1 sa",
+    "description": "Timer saat formatı"
+  },
+  "timerMinute": {
+    "message": "$1 dk",
+    "description": "Timer dakika formatı"
+  },
+  "hourShort": {
+    "message": "sa",
+    "description": "Saat kısaltması"
+  },
+  "minuteShort": {
+    "message": "dk",
+    "description": "Dakika kısaltması"
+  },
+  "timerSecond": {
+    "message": "$1 sn",
+    "description": "Timer saniye formatı"
+  },
+  "iftarTime": {
+    "message": "İftar Vaktine",
+    "description": "İftar vakti gösterimi"
+  },
+
+  "islamicDate": {
+    "message": "Hicri Tarih",
+    "description": "Hicri tarih gösterimi"
+  },
+  "ramadanTimer": {
+    "message": "İftar Sayacı",
+    "description": "İftar sayacı gösterimi"
+  },
+  "customAdjustments": {
+    "message": "Dakika Ayarları",
+    "description": "Özel vakit ayarları"
+  },
+  "customAdjustmentsTitle": {
+    "message": "Dakika Ayarları",
+    "description": "Dakika ayarları başlığı"
+  },
+  "customAdjustmentsEmpty": {
+    "message": "Ayarlanmamış",
+    "description": "Ayar yok mesajı"
+  },
+  "adjustmentsDescription": {
+    "message": "Her vakit için dakika ayarlaması yapabilirsiniz (-60 ile +60 dakika arası)",
+    "description": "Ayarlar açıklaması"
+  },
+  "resetAdjustments": {
+    "message": "Tümünü Sıfırla",
+    "description": "Tüm ayarları sıfırla butonu"
+  },
+
+  "about": {
+    "message": "Hakkında",
+    "description": "Hakkında bölümü"
+  },
+  "aboutOpenSource": {
+    "message": "Bu proje ücretsiz ve açık kaynaktır",
+    "description": "Açık kaynak bağlantısı"
+  },
+  "aboutSourceCode": {
+    "message": "Kaynak Kod",
+    "description": "Kaynak kod bağlantısı"
+  },
+  "aboutAPI": {
+    "message": "Bu uygulama $1 tarafından sağlanan verileri kullanmaktadır.",
+    "description": "API bilgilendirme mesajı",
+    "placeholders": {
+      "source": {
+        "content": "$1",
+        "example": "diyanet.gov.tr"
+      }
+    }
+  },
+  "support": {
+    "message": "Desteğiniz için teşekkür ederim",
+    "description": "Destek bölümü"
+  },
+
+  "selectLocation": {
+    "message": "Konum Seçin",
+    "description": "Konum seçimi istemi"
+  },
+  "viewTimes": {
+    "message": "Vakitleri Görüntüle",
+    "description": "Vakitleri görüntüle butonu"
+  },
+  "timesNotFound": {
+    "message": "Namaz vakitleri bulunamadı",
+    "description": "Vakit bulunamadı mesajı"
+  },
+  "todayTimesNotFound": {
+    "message": "Bugünkü namaz vakitleri bulunamadı",
+    "description": "Bugünkü vakit bulunamadı mesajı"
+  },
+  "settingsAdjusted": {
+    "message": "Ayarlar güncellendi",
+    "description": "Ayarlar güncellendi mesajı"
+  },
+  "ramadanTime": {
+    "message": "Iftar Vakti",
+    "description": "Iftar sayacı başlığı"
+  },
+  "jumuah": {
+    "message": "Cuma",
+    "description": "Cuma namazı"
+  },
+  "friday": {
+    "message": "Cuma",
+    "description": "Cuma günü"
+  },
+
+  "backButton": {
+    "message": "Geri",
+    "description": "Geri butonu"
+  }
+}

@@ -7,19 +7,21 @@ const packageJson = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
  */
 const manifest = {
   manifest_version: 3,
-  default_locale: 'en',
- 
-  name: '__MSG_extensionName__',
+  default_locale: 'tr',
+  // Ensure locales are properly referenced
+  // Chrome will automatically load _locales from the extension root
+
+  name: 'Vakitler',
   version: packageJson.version,
-  description: '__MSG_extensionDescription__',
-  //Update permissions when needed
-  permissions: ['storage'],
+  description: 'Namaz vakitlerini gösteren pratik tarayıcı uzantısı',
+  // Vakitler extension permissions
+  permissions: ['storage', 'alarms', 'tabs'],
   background: {
     service_worker: 'src/pages/background/index.js',
     type: 'module',
   },
   action: {
-    default_title: 'Extension Boilerplate',
+    default_title: 'Vakitler - Namaz Vakitleri',
     default_icon: 'icon-48.png',
     default_popup: 'src/pages/popup/index.html',
   },
@@ -36,7 +38,6 @@ const manifest = {
       run_at: 'document_end',
     },
   ],
-  host_permissions: ['<all_urls>'],
   web_accessible_resources: [
     {
       resources: [
