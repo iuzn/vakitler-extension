@@ -4,6 +4,8 @@
 
 Namaz vakitlerini gösteren pratik ve modern tarayıcı uzantısı. Güncel namaz vakitlerini, kalan süreyi ve şehir seçimi özelliklerini içerir.
 
+[![Chrome Web Store](public/chrome-web-storepng.png)](https://chromewebstore.google.com/detail/vakitler/kgjejdjeaibhcfaicponfommechfpail)
+
 ## 🚀 Özellikler
 
 - 🕌 **Namaz Vakitleri** - Güncel 5 vakit namaz saatleri
@@ -133,8 +135,6 @@ Namaz vakitlerinin hesaplanması ve yönetimi:
 - **Summary**: Güncel vakit ve kalan süre gösterimi
 - **TimeList**: Tüm vakitlerin listesi
 - **CitySelection**: Ülke/şehir/ilçe seçimi
-
-
 
 ## 📝 Lisans
 
