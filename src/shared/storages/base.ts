@@ -98,6 +98,7 @@ export interface VakitlerSettings {
   timeFormat: TimeFormat;
   adjustments: number[];
   islamicDate: boolean;
+  islamicDateAdjustment: number;
   ramadanTimer: boolean;
   language?: 'tr' | 'en'; // Optional language preference
 }

@@ -66,6 +66,8 @@ export type TranslationKey =
 
   // Settings
   | 'islamicDate'
+  | 'islamicDateAdjustment'
+  | 'islamicDateAdjustmentDesc'
   | 'ramadanTimer'
   | 'customAdjustmentsTitle'
   | 'customAdjustmentsEmpty'
@@ -167,6 +169,9 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
 
     // Settings
     islamicDate: 'Hicri Tarih',
+    islamicDateAdjustment: 'Hicri Tarih Düzeltme',
+    islamicDateAdjustmentDesc:
+      'Bölgenizdeki hilal gözlemine göre hicri tarihi bir gün ileri veya geri alın.',
     ramadanTimer: 'İftar Sayacı',
     customAdjustmentsTitle: 'Dakika Ayarları',
     customAdjustmentsEmpty: 'Ayarlanmamış',
@@ -271,6 +276,9 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
 
     // Settings
     islamicDate: 'Islamic Date',
+    islamicDateAdjustment: 'Islamic Date Correction',
+    islamicDateAdjustmentDesc:
+      'Adjust the Islamic date by one day forward or backward based on the crescent moon sighting in your region.',
     ramadanTimer: 'Ramadan Timer',
     customAdjustmentsTitle: 'Minute Adjustments',
     customAdjustmentsEmpty: 'No adjustments',

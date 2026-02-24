@@ -23,6 +23,7 @@ export const VakitlerStoreContext = createContext<
     timeFormat: TimeFormat.TwentyFour,
     adjustments: [0, 0, 0, 0, 0, 0],
     islamicDate: false,
+    islamicDateAdjustment: 0,
     ramadanTimer: false,
     language: undefined, // Will be set to user's system language
   },
@@ -43,6 +44,7 @@ export function VakitlerStoreProvider({ children }: { children: ReactNode }) {
     timeFormat: TimeFormat.TwentyFour,
     adjustments: [0, 0, 0, 0, 0, 0],
     islamicDate: false,
+    islamicDateAdjustment: 0,
     ramadanTimer: false,
     language: undefined, // Will be set to user's system language
   });
@@ -187,6 +189,7 @@ export function VakitlerStoreProvider({ children }: { children: ReactNode }) {
           timeFormat: TimeFormat.TwentyFour,
           adjustments: [0, 0, 0, 0, 0, 0],
           islamicDate: false,
+          islamicDateAdjustment: 0,
           ramadanTimer: false,
           language: userLanguage,
         };
@@ -227,6 +230,7 @@ export function VakitlerStoreProvider({ children }: { children: ReactNode }) {
         adjustments: [0, 0, 0, 0, 0, 0],
         timeFormat: TimeFormat.TwentyFour,
         islamicDate: false,
+        islamicDateAdjustment: 0,
         ramadanTimer: false,
       });
     } finally {

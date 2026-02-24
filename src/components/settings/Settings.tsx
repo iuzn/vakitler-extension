@@ -470,13 +470,106 @@ export default function Settings({ onBack }: SettingsProps) {
                     const newSettings = {
                       ...tempSettings,
                       islamicDate: checked,
+                      islamicDateAdjustment: checked
+                        ? tempSettings?.islamicDateAdjustment || 0
+                        : 0,
                     };
                     setTempSettings(newSettings);
-                    // Otomatik kaydet
                     setSettings(newSettings);
                   }}
                 />
               </Box>
+
+              {tempSettings?.islamicDate && (
+                <Box className="flex-col items-start gap-2">
+                  <div className="flex w-full items-center justify-between">
+                    <div className="grow">
+                      <Box.Title>{t('islamicDateAdjustment')}</Box.Title>
+                    </div>
+                    <span className="flex items-center gap-[0.5px]">
+                      {(tempSettings?.islamicDateAdjustment || 0) !== 0 && (
+                        <button
+                          type="button"
+                          className="mr-2 flex h-8 items-center justify-center px-2 text-sm"
+                          onClick={() => {
+                            const newSettings = {
+                              ...tempSettings,
+                              islamicDateAdjustment: 0,
+                            };
+                            setTempSettings(newSettings);
+                            setSettings(newSettings);
+                          }}
+                        >
+                          {(tempSettings?.islamicDateAdjustment || 0) > 0
+                            ? `+${tempSettings?.islamicDateAdjustment}`
+                            : tempSettings?.islamicDateAdjustment}
+                        </button>
+                      )}
+                      <button
+                        className="flex h-9 w-9 items-center justify-center rounded-l-lg bg-zinc-200 dark:bg-zinc-700"
+                        type="button"
+                        onClick={() => {
+                          const current =
+                            tempSettings?.islamicDateAdjustment || 0;
+                          if (current <= -2) return;
+                          const newSettings = {
+                            ...tempSettings,
+                            islamicDateAdjustment: current - 1,
+                          };
+                          setTempSettings(newSettings);
+                          setSettings(newSettings);
+                        }}
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          viewBox="0 0 24 24"
+                          strokeWidth="1.5"
+                          stroke="currentColor"
+                          fill="none"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg>
+                      </button>
+                      <div className="w-px h-5 bg-zinc-300 dark:bg-zinc-600"></div>
+                      <button
+                        className="flex h-9 w-9 items-center justify-center rounded-r-lg bg-zinc-200 dark:bg-zinc-700"
+                        type="button"
+                        onClick={() => {
+                          const current =
+                            tempSettings?.islamicDateAdjustment || 0;
+                          if (current >= 2) return;
+                          const newSettings = {
+                            ...tempSettings,
+                            islamicDateAdjustment: current + 1,
+                          };
+                          setTempSettings(newSettings);
+                          setSettings(newSettings);
+                        }}
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          viewBox="0 0 24 24"
+                          strokeWidth="1.5"
+                          stroke="currentColor"
+                          fill="none"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <line x1="12" y1="5" x2="12" y2="19" />
+                          <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg>
+                      </button>
+                    </span>
+                  </div>
+                  <p className="text-xs opacity-50">
+                    {t('islamicDateAdjustmentDesc')}
+                  </p>
+                </Box>
+              )}
 
               {/* RAMADAN TIMER */}
               <Box>

@@ -11,10 +11,14 @@ export default function IslamicDate({ className }: IslamicDateProps) {
   const { times, settings } = useContext(VakitlerStoreContext);
   const { currentLanguage } = useI18nContext();
 
-  // Get current date
-  const now = new Date();
+  if (!settings?.islamicDate) return null;
 
-  // Create Islamic date using Intl.DateTimeFormat with Islamic calendar
+  const now = new Date();
+  const adjustment = settings?.islamicDateAdjustment || 0;
+  if (adjustment !== 0) {
+    now.setDate(now.getDate() + adjustment);
+  }
+
   const date = new Intl.DateTimeFormat(
     currentLanguage === 'tr' ? 'tr-TR' : 'en-US',
     {
@@ -24,8 +28,6 @@ export default function IslamicDate({ className }: IslamicDateProps) {
       day: 'numeric',
     },
   ).format(now);
-
-  if (!settings?.islamicDate) return null;
 
   return <div className={cn('text-sm opacity-80', className)}>{date}</div>;
 }
